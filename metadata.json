@@ -1,0 +1,5 @@
+{
+  "name": "Fusion Lander",
+  "description": "A sci-fi low-gravity lunar lander game. Master the physics, land on neon platforms, and solve fuel-cell calculations to survive.",
+  "requestFramePermissions": []
+}

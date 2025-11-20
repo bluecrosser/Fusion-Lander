@@ -160,6 +160,19 @@ const GameEngine: React.FC<GameEngineProps> = ({
       audioService.playThrust(false);
     }
 
+    // Passive Trail (Subtle movement trace)
+    const speed = Math.sqrt(p.velocity.x**2 + p.velocity.y**2);
+    if (speed > 1.0 && Math.random() < 0.3) { // Only if moving somewhat fast, 30% chance per tick
+      particlesRef.current.push({
+        x: p.position.x + (Math.random() - 0.5) * 6,
+        y: p.position.y + (Math.random() - 0.5) * 6 + 5,
+        vx: 0, // Stationary in space = trails behind
+        vy: 0,
+        life: 0.4 + Math.random() * 0.2, // Short fade
+        color: 'rgba(14, 165, 233, 0.4)' // Faint blue
+      });
+    }
+
     // Gravity
     p.velocity.y += GRAVITY;
     // Cap falling speed

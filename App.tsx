@@ -297,7 +297,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center">
+    <div className="relative w-full h-[100dvh] bg-black overflow-hidden flex flex-col items-center justify-center">
       
       {/* Music Toggle - Top Right Corner */}
       <button 
@@ -322,14 +322,14 @@ const App: React.FC = () => {
         <div className="w-full max-w-4xl flex justify-between items-end px-4 md:px-0 pb-2 z-10">
             
             {/* Left: Fuel */}
-             <div className="bg-slate-900/80 p-2 border border-sky-900 rounded backdrop-blur-sm shadow-lg w-32 md:w-40">
+             <div className="bg-slate-900/80 p-2 border border-sky-900 rounded backdrop-blur-sm shadow-lg w-28 md:w-40">
                 <div className="flex justify-between items-end mb-1">
-                     <span className="text-xs text-sky-400 font-bold">FUEL</span>
-                     <span className={`text-sm font-bold ${player.fuel < 20 ? 'text-red-500 animate-pulse' : 'text-white'}`}>
+                     <span className="text-[10px] md:text-xs text-sky-400 font-bold">FUEL</span>
+                     <span className={`text-xs md:text-sm font-bold ${player.fuel < 20 ? 'text-red-500 animate-pulse' : 'text-white'}`}>
                        {Math.floor(player.fuel)}%
                      </span>
                 </div>
-                <div className="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+                <div className="w-full h-1.5 md:h-2 bg-slate-700 rounded-full overflow-hidden">
                   <div 
                     className={`h-full transition-all duration-300 ${player.fuel < 20 ? 'bg-red-500' : 'bg-amber-500'}`} 
                     style={{ width: `${player.fuel}%` }} 
@@ -345,9 +345,9 @@ const App: React.FC = () => {
             </div>
 
             {/* Right: Score */}
-             <div className="bg-slate-900/80 p-2 border border-sky-900 rounded backdrop-blur-sm shadow-lg w-32 md:w-40 flex justify-between items-center">
-                <span className="text-xs text-sky-400 font-bold">SCORE</span>
-                <span className="text-xl text-white font-mono">{score}</span>
+             <div className="bg-slate-900/80 p-2 border border-sky-900 rounded backdrop-blur-sm shadow-lg w-28 md:w-40 flex justify-between items-center">
+                <span className="text-[10px] md:text-xs text-sky-400 font-bold">SCORE</span>
+                <span className="text-lg md:text-xl text-white font-mono">{score}</span>
              </div>
         </div>
       )}
